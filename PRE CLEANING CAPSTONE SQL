@@ -1,6 +1,3 @@
-```SQL
-   // code for coloring
-
 ### Daniel Pieretti's Portfolio
 
 /*
@@ -131,4 +128,3 @@ SELECT DISTINCT member_casual
 FROM capstone_2111_2204.combined_tripdata
 
 -- NOTE: There are only two! Good!
-```
