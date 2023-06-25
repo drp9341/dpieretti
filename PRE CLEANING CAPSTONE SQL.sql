@@ -1,9 +1,7 @@
 ## Daniel Pieretti's Portfolio
 
-/*
-To create a comprehensive table containing all bike trips from November 1st, 2021, to April 31, 2022,
-we will append or union the data from the 6 monthly bike trip tables.
-*/
+```To create a comprehensive table containing all bike trips from November 1st, 2021, to April 31, 2022,
+we will append or union the data from the 6 monthly bike trip tables.```
 
 ----------------------------------------------------------------------------------------------------
 CREATE TABLE bike_tripdata_21_22.combined_tripdata
@@ -22,17 +20,16 @@ FROM (
      SELECT * FROM `capstone_2111_2204.cyclistic_2204`
      );
 ----------------------------------------------------------------------------------------------------
-/*
-Above 'SELECT *' query returned 1,482,188 rows. 
+```Above 'SELECT *' query returned 1,482,188 rows. 
 The sum off all 12 table's rows is the same, thus we know the table was created correctly.
 We should expect the rows from the 12 seperate tables to equal the appended table as we used a UNION ALL.
 A UNION ALL keeps all the rows from the multiple tables specified in the UNION ALL OR appends them.
-However, a UNION will remove all rows that have duplicate values in one of the table's you are unioning.
+However, a UNION will remove all rows that have duplicate values in one of the table's you are unioning.```
 ---------------Analyze all columns from left to right for cleaning----------------------------------------------
 ride_id:
-- check length combinations for ride_id  
-- and all values are unique as ride_id is a primary key /*
-----------------------------------------------------------------------------------------------------
+```- check length combinations for ride_id  
+- and all values are unique as ride_id is a primary key 
+----------------------------------------------------------------------------------------------------```
 
 SELECT LENGTH(ride_id), count(*)
 FROM `capstone_2111_2204.combined_tripdata`
@@ -41,33 +38,29 @@ GROUP BY LENGTH(ride_id);
 SELECT COUNT (DISTINCT ride_id)
 FROM `capstone_2111_2204.combined_tripdata`>
      
----NOTES:--------------------------------------------------------------------------------------------
+```---NOTES:--------------------------------------------------------------------------------------------
 The 'ride_id' column consists of unique 16-character long strings. No data cleaning is required for this column.
-*/
 
 --#2. check the allowable rideable_types
-----------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------```
 
 SELECT DISTINCT rideable_type
 FROM `capstone_2111_2204.combined_tripdata`;
      
----NOTES:--------------------------------------------------------------------------------------------
+```---NOTES:--------------------------------------------------------------------------------------------
 As observed earlier, there are three categories of 'rideable_type': electric_bike, classic_bike, and docked_bike. However, it appears that the designation "docked_bike" is an incorrect label and should be updated to "classic_bike".
-----------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------```
 
 
-#3. Verify the started_at and ended_at columns.
-We are interested in selecting rows where the duration of the ride was more than one minute but less than one day.
-*/
+```#3. Verify the started_at and ended_at columns.
+We are interested in selecting rows where the duration of the ride was more than one minute but less than one day.```
 
 SELECT *
 FROM `capstone_2111_2204.combined_tripdata`
 WHERE TIMESTAMP_DIFF(ended_at, started_at, MINUTE) <= 1 OR
    TIMESTAMP_DIFF(ended_at, started_at, MINUTE) >= 1440;
 
-/*
-#4. Validate the start/end station name/id columns for naming inconsistencies.
-*/
+``` #4. Validate the start/end station name/id columns for naming inconsistencies.```
 
 -- Query 1: Count the occurrences of each start station name.
 SELECT start_station_name, count(*)
