@@ -1,4 +1,4 @@
-NOTE: Here I created a new table taking out all the trips where it was maintenance. */ 
+```NOTE: Here I created a new table taking out all the trips where it was maintenance. ``` 
 ----------------------------------------------------------------------------------------------------
 
 WITH cleaned_combined_tripdata AS ( 
@@ -21,7 +21,7 @@ WITH cleaned_combined_tripdata AS (
 
 
 ----------------------------------------------------------------------------------------------------
-I was left with... 1,089,896 rows.
+```I was left with... 1,089,896 rows.```
 ----------------------------------------------------------------------------------------------------
 
 I created a new table so I could get a column with the information... "length of ride minutes"
@@ -33,7 +33,7 @@ AS (
 );
 
 ----------------------------------------------------------------------------------------------------
-Then I created a table based on the types of riders each month to see what the relation was.
+```Then I created a table based on the types of riders each month to see what the relation was.```
 ----------------------------------------------------------------------------------------------------
 
 WITH rides_per_month AS
@@ -48,7 +48,7 @@ SELECT *
 FROM rides_per_month;
 
 ----------------------------------------------------------------------------------------------------
-Then I created a table based on the days of the week vs. type of rider.
+```Then I created a table based on the days of the week vs. type of rider.```
 ----------------------------------------------------------------------------------------------------
 
 WITH rides_per_day_of_week AS (
