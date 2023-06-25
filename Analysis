@@ -46,3 +46,18 @@ WITH rides_per_month AS
 )
 SELECT *
 FROM rides_per_month;
+
+----------------------------------------------------------------------------------------------------
+Then I created a table based on the days of the week vs. type of rider.
+----------------------------------------------------------------------------------------------------
+
+WITH rides_per_day_of_week AS
+(
+   SELECT FORMAT_TIMESTAMP('%A', started_at) AS day_of_week,
+          SUM(CASE WHEN member_casual = 'member' THEN 1 ELSE 0 END) AS member_rides,
+          SUM(CASE WHEN member_casual = 'casual' THEN 1 ELSE 0 END) AS casual_rides
+   FROM `capstone_2111_2204.cleaned_combined_tripdata_new`
+   GROUP BY day_of_week
+)
+SELECT *
+FROM rides_per_day_of_week;
