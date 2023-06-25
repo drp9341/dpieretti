@@ -1,13 +1,11 @@
-```sql
-<
-
-
 ### Daniel Pieretti's Portfolio
 
 /*
 To create a comprehensive table containing all bike trips from November 1st, 2021, to April 31, 2022, we will append or union the data from the 6 monthly bike trip tables.
 */ 
 
+```sql
+<
 CREATE TABLE bike_tripdata_21_22.combined_tripdata
 SELECT *
 FROM (
@@ -22,7 +20,7 @@ FROM (
      SELECT * FROM `capstone_2111_2204.cyclistic_2203`
      UNION ALL 
      SELECT * FROM `capstone_2111_2204.cyclistic_2204`
-     );
+     );>
 
 ----------------------------------------------------------------------------------------------------
 /* NOTES:
@@ -38,12 +36,13 @@ However, a UNION will remove all rows that have duplicate values in one of the t
 - and all values are unique as ride_id is a primary key
 */
 
+```sql<
 SELECT LENGTH(ride_id), count(*)
 FROM `capstone_2111_2204.combined_tripdata`
 GROUP BY LENGTH(ride_id);
 
 SELECT COUNT (DISTINCT ride_id)
-FROM `capstone_2111_2204.combined_tripdata`
+FROM `capstone_2111_2204.combined_tripdata`>
 
 
 /* NOTES:
