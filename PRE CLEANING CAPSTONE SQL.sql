@@ -88,9 +88,12 @@ FROM capstone_2111_2204.combined_tripdata;
 ``` The start and end station names require cleanup:
 
 Remove leading and trailing spaces.
-Remove the substring '(Temp)' as Cyclistic uses it during station repairs. All station names should adhere to the same naming conventions.
-We found instances of start/end names such as "DIVVY CASSETTE REPAIR MOBILE STATION", "Lyft Driver Center Private Rack", "351", "Base - 2132 W Hubbard Warehouse", Hubbard Bike-checking (LBS-WH-TEST), and "WEST CHI-WATSON". These will be deleted as they represent maintenance trips.
-The start and end station ID columns have numerous naming convention errors and varying string lengths. Since they do not provide any value to the analysis and do not benefit from cleaning, they will be disregarded.
+Remove the substring '(Temp)' as Cyclistic uses it during station repairs. All station names should 
+adhere to the same naming conventions. We found instances of start/end names such as 
+"DIVVY CASSETTE REPAIR MOBILE STATION", "Lyft Driver Center Private Rack", "351", "Base - 2132 W Hubbard Warehouse",
+Hubbard Bike-checking (LBS-WH-TEST), and "WEST CHI-WATSON". These will be deleted as they represent maintenance trips.
+The start and end station ID columns have numerous naming convention errors and varying string lengths. 
+Since they do not provide any value to the analysis and do not benefit from cleaning, they will be disregarded.
 ----------------------------------------------------------------------------------------------------
 
 #5. Check for NULLs in the start and end station name columns. ```
@@ -102,10 +105,12 @@ OR end_station_name IS NULL AND end_station_id IS NULL
 GROUP BY rideable_type;
 
 
-``` For classic bikes and docked bikes, trips always start and end with the bikes locked in a docking station. However, electric bikes offer more flexibility, as they can be locked using their bike lock in the general vicinity of a docking station. Therefore, electric bike trips may not necessarily start or end at a station. To address this:
+``` For classic bikes and docked bikes, trips always start and end with the bikes locked in a docking station. 
+However, electric bikes offer more flexibility, as they can be locked using their bike lock in the general vicinity
+of a docking station. Therefore, electric bike trips may not necessarily start or end at a station. To address this:
 
-Remove classic/docked bike trips that lack a start or end station name and do not have a start/end station ID to fill in the null values.
-Change the null station names to 'On Bike Lock' for electric bikes.
+Remove classic/docked bike trips that lack a start or end station name and do not have a start/end station ID to 
+fill in the null values. Change the null station names to 'On Bike Lock' for electric bikes.
 
 ----------------------------------------------------------------------------------------------------
 
