@@ -23,7 +23,7 @@ FROM (
 The sum off all 12 table's rows is the same, thus we know the table was created correctly.
 We should expect the rows from the 12 seperate tables to equal the appended table as we used a UNION ALL.
 A UNION ALL keeps all the rows from the multiple tables specified in the UNION ALL OR appends them.
-However, a UNION will remove all rows that have duplicate values in one of the table's you are unioning.```
+However, a UNION will remove all rows that have duplicate values in one of the table's you are unioning.
 
 --#1. Analyze all columns from left to right for cleaning
 ride_id:
