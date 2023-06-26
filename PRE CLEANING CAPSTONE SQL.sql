@@ -1,6 +1,6 @@
 ## Daniel Pieretti's Portfolio
 To create a comprehensive table containing all bike trips from November 1st, 2021, to April 31, 2022,
-we will append or union the data from the 6 monthly bike trip tables.
+we will append or union the data from the 6 monthly bike trip tables.```
 ----------------------------------------------------------------------------------------------------
      
 CREATE TABLE bike_tripdata_21_22.combined_tripdata
