@@ -24,6 +24,7 @@ The sum off all 12 table's rows is the same, thus we know the table was created 
 We should expect the rows from the 12 seperate tables to equal the appended table as we used a UNION ALL.
 A UNION ALL keeps all the rows from the multiple tables specified in the UNION ALL OR appends them.
 However, a UNION will remove all rows that have duplicate values in one of the table's you are unioning.
+----------------------------------------------------------------------------------------------------
 
 --#1. Analyze all columns from left to right for cleaning
 ride_id:
@@ -38,19 +39,19 @@ GROUP BY LENGTH(ride_id);
 SELECT COUNT (DISTINCT ride_id)
 FROM `capstone_2111_2204.combined_tripdata`>
      
-``` NOTES
-The 'ride_id' column consists of unique 16-character long strings. No data cleaning is required for this column.
+``` NOTES The 'ride_id' column consists of unique 16-character long strings. No data cleaning is 
+required for this column.
+----------------------------------------------------------------------------------------------------```
 
 --#2. check the allowable rideable_types
-----------------------------------------------------------------------------------------------------```
 
 SELECT DISTINCT rideable_type
 FROM `capstone_2111_2204.combined_tripdata`;
      
-```---NOTES:--------------------------------------------------------------------------------------------
-As observed earlier, there are three categories of 'rideable_type': electric_bike, classic_bike, and docked_bike. However, it appears that the designation "docked_bike" is an incorrect label and should be updated to "classic_bike".
+```NOTES: As observed earlier, there are three categories of 'rideable_type': electric_bike, classic_bike,
+and docked_bike. However, it appears that the designation "docked_bike" is an incorrect label and should
+be updated to "classic_bike".
 ----------------------------------------------------------------------------------------------------```
-
 
 ```#3. Verify the started_at and ended_at columns.
 We are interested in selecting rows where the duration of the ride was more than one minute but less than one day.```
