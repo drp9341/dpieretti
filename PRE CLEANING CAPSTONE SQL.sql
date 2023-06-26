@@ -1,7 +1,7 @@
 ## Daniel Pieretti's Portfolio
-To create a comprehensive table containing all bike trips from November 1st, 2021, to April 31, 2022,
+```To create a comprehensive table containing all bike trips from November 1st, 2021, to April 31, 2022,
 we will append or union the data from the 6 monthly bike trip tables.```
-----------------------------------------------------------------------------------------------------
+
      
 CREATE TABLE bike_tripdata_21_22.combined_tripdata
 SELECT *
@@ -19,12 +19,11 @@ FROM (
      SELECT * FROM `capstone_2111_2204.cyclistic_2204`
      );
      
-----------------------------------------------------------------------------------------------------
-Above 'SELECT *' query returned 1,482,188 rows. 
+```Above 'SELECT *' query returned 1,482,188 rows. 
 The sum off all 12 table's rows is the same, thus we know the table was created correctly.
 We should expect the rows from the 12 seperate tables to equal the appended table as we used a UNION ALL.
 A UNION ALL keeps all the rows from the multiple tables specified in the UNION ALL OR appends them.
-However, a UNION will remove all rows that have duplicate values in one of the table's you are unioning.
+However, a UNION will remove all rows that have duplicate values in one of the table's you are unioning.```
 ---------------Analyze all columns from left to right for cleaning-----------------------------------
 ride_id:
 - check length combinations for ride_id  
