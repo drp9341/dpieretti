@@ -24,11 +24,12 @@ The sum off all 12 table's rows is the same, thus we know the table was created 
 We should expect the rows from the 12 seperate tables to equal the appended table as we used a UNION ALL.
 A UNION ALL keeps all the rows from the multiple tables specified in the UNION ALL OR appends them.
 However, a UNION will remove all rows that have duplicate values in one of the table's you are unioning.```
----------------Analyze all columns from left to right for cleaning-----------------------------------
+
+--#1. Analyze all columns from left to right for cleaning
 ride_id:
 - check length combinations for ride_id  
-- and all values are unique as ride_id is a primary key 
-----------------------------------------------------------------------------------------------------
+- and all values are unique as ride_id is a primary key```
+
 
 SELECT LENGTH(ride_id), count(*)
 FROM `capstone_2111_2204.combined_tripdata`
@@ -37,7 +38,7 @@ GROUP BY LENGTH(ride_id);
 SELECT COUNT (DISTINCT ride_id)
 FROM `capstone_2111_2204.combined_tripdata`>
      
-```---NOTES:--------------------------------------------------------------------------------------------
+``` NOTES
 The 'ride_id' column consists of unique 16-character long strings. No data cleaning is required for this column.
 
 --#2. check the allowable rideable_types
