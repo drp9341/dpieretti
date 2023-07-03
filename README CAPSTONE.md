@@ -13,9 +13,9 @@ If you are interested in the complete project, including a step-by-step walkthro
 
 For the SQL queries used in the pre-cleaning exploration and the cleaning/analysis phases, you can refer to the following links:
 
-[SQL Pre-cleaning Exploration](https://github.com/drp9341/dpieretti/blob/main/PRE%20CLEANING%20CAPSTONE%20SQL.sql)
+[SQL Cleaning & Exploration](https://github.com/drp9341/dpieretti/blob/main/PRE%20CLEANING%20CAPSTONE%20SQL.sql)
 
-[SQL Cleaning and Analysis](https://github.com/drp9341/dpieretti/blob/main/Analysis.sql)
+[SQL Analysis](https://github.com/drp9341/dpieretti/blob/main/Analysis.sql)
 
 To explore the data visualizations, check out my Cyclistic Project Page on Tableau Public here: [Tableau](https://public.tableau.com/app/profile/daniel.pieretti)
 
