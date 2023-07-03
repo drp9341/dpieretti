@@ -20,6 +20,6 @@ For the SQL queries used in the pre-cleaning exploration and the cleaning/analys
 
 To explore the data visualizations, check out my Cyclistic Project Page on Tableau Public here: [Tableau](https://public.tableau.com/app/profile/daniel.pieretti)
 
-For access to the raw dataset used in this case, you can find it here: Cyclistic Bike Data
+For access to the raw dataset used in this case, you can find it here: [Cyclistic Bike Data](https://divvy-tripdata.s3.amazonaws.com/index.html)
 
 By analyzing Cyclistic's data and creating data-driven visualizations, I aimed to provide valuable insights to the marketing team, enabling them to develop an effective campaign to achieve their business objective.
