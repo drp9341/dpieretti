@@ -1,4 +1,4 @@
-## Daniel Pieretti's Portfolio
+## Cyclistic Bike Sharing Marketing
 ```To create a comprehensive table containing all bike trips from November 1st, 2021, to April 31, 2022,
 we will append or union the data from the 6 monthly bike trip tables.```
 
